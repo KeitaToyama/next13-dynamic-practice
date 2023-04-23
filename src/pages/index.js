@@ -15,7 +15,9 @@ const inter = Inter({ subsets: ["latin"] });
 // };
 
 export const getServerSideProps = async () => {
-  const alltodo = await fetch("https://jsonplaceholder.typicode.com/todos");
+  const alltodo = await fetch(
+    "https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=0293fe204f0979566d94563de5d585af"
+  );
   const alltodoJson = await alltodo.text();
   return {
     props: {
